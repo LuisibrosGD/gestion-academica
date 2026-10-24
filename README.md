@@ -1,6 +1,6 @@
 # Sistema de Gestión Académica con React
 
-Trabajo práctico del curso **[CURSO]** — Ciclo **[N]** — Grupo **[G]**
+Trabajo práctico del curso **Taller de construccion de Software Web** — Ciclo **8** — Grupo **3**
 Docente: **[NOMBRE DEL DOCENTE]**
 
 Aplicación de una sola vista que registra estudiantes y actualiza la lista en tiempo real,
