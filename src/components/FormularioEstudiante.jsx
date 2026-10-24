@@ -4,6 +4,8 @@ import './FormularioEstudiante.css';
 
 const NOMBRE_MIN = 2;
 const NOMBRE_MAX = 60;
+// Un nombre y dos apellidos como mínimo.
+const NOMBRE_PALABRAS_MIN = 3;
 // Solo letras (incluye acentos y ñ) separadas por espacios.
 const PATRON_NOMBRE = /^\p{L}+(?:\s+\p{L}+)*$/u;
 
@@ -18,6 +20,9 @@ function validarNombre(texto) {
   if (nombre.length < NOMBRE_MIN) return `Mínimo ${NOMBRE_MIN} caracteres.`;
   if (nombre.length > NOMBRE_MAX) return `Máximo ${NOMBRE_MAX} caracteres.`;
   if (!PATRON_NOMBRE.test(nombre)) return 'Usa solo letras y espacios.';
+  if (nombre.split(' ').length < NOMBRE_PALABRAS_MIN) {
+    return 'Ingresa al menos un nombre y dos apellidos.';
+  }
   return '';
 }
 
