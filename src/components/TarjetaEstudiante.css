@@ -1,23 +1,191 @@
-/* PLACEHOLDER DE INTEGRACIÓN — Integrante 3 reemplaza este archivo. */
+/* TarjetaEstudiante.css — Estilos del componente presentacional */
 
-.tarjeta {
+/* Animación suave de entrada (Fade-in + Desplazamiento sutil de 8px) */
+@keyframes entradaTarjeta {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tarjeta-estudiante {
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  animation: entradaTarjeta 240ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta-estudiante {
+    animation: none;
+  }
+}
+
+.tarjeta-estudiante:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-strong);
+}
+
+.tarjeta-estudiante--inactivo {
+  border-color: var(--border);
+  background: #fbfcfe;
+}
+
+/* ---------------- Cabecera ---------------- */
+
+.tarjeta-estudiante__header {
+  display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
-.tarjeta__nombre {
+.tarjeta-estudiante__avatar-wrap {
+  flex-shrink: 0;
+}
+
+.tarjeta-estudiante__avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background: var(--avatar-bg, var(--primary-soft));
+  color: var(--avatar-color, var(--primary));
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background-color 150ms ease, color 150ms ease;
+  user-select: none;
+}
+
+.tarjeta-estudiante__avatar--inactivo {
+  background: var(--surface-muted);
+  color: var(--text-tertiary);
+}
+
+.tarjeta-estudiante__datos {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tarjeta-estudiante__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tarjeta-estudiante__id {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+}
+
+.tarjeta-estudiante__carrera {
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tarjeta-estudiante__nombre {
   font-size: 16px;
   font-weight: 700;
+  line-height: 1.35;
+  color: var(--text);
+  word-break: break-word;
 }
 
-.tarjeta__carrera {
-  font-size: 13px;
+/* ---------------- Metadatos ---------------- */
+
+.tarjeta-estudiante__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: 12px;
   color: var(--text-secondary);
 }
 
-.tarjeta__acciones {
+.tarjeta-estudiante__meta-icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.tarjeta-estudiante__meta-text strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------------- Divisor ---------------- */
+
+.tarjeta-estudiante__divider {
+  width: 100%;
+  height: 1px;
+  margin: var(--space-4) 0;
+  border: none;
+  background-color: var(--border);
+}
+
+/* ---------------- Footer y Acciones ---------------- */
+
+.tarjeta-estudiante__footer {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: var(--space-2);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.tarjeta-estudiante__estado {
+  gap: 6px;
+}
+
+.tarjeta-estudiante__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background-color: var(--text-tertiary);
+}
+
+.tarjeta-estudiante__dot--activo {
+  background-color: var(--success);
+  box-shadow: 0 0 0 2px var(--success-soft);
+}
+
+.tarjeta-estudiante__acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.tarjeta-estudiante__btn-toggle {
+  height: 32px;
+  padding: 0 var(--space-2);
+  font-size: 12px;
+}
+
+.tarjeta-estudiante__btn-eliminar {
+  height: 32px;
+  padding: 0 var(--space-2);
+  font-size: 12px;
+  gap: 4px;
 }

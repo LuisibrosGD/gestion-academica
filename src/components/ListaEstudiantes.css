@@ -1,33 +1,107 @@
-/* PLACEHOLDER DE INTEGRACIÓN — Integrante 3 reemplaza este archivo. */
+/* ListaEstudiantes.css — Estilos del listado de estudiantes y estado vacío */
 
-.lista {
+.lista-estudiantes {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
+  min-width: 0;
 }
 
-.lista__head {
+/* ---------------- Cabecera ---------------- */
+
+.lista-estudiantes__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.lista-estudiantes__title-wrap {
+  display: flex;
+  align-items: center;
   gap: var(--space-3);
 }
 
-.lista__title {
-  font-size: 18px;
+.lista-estudiantes__title {
+  font-size: 20px;
   font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
-.lista__grid {
+.lista-estudiantes__badge {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------------- Grilla dinámica de tarjetas ---------------- */
+
+.lista-estudiantes__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-5);
 }
 
-.lista__vacia {
-  padding: var(--space-6);
+/* ---------------- Estado Vacío ---------------- */
+
+.lista-estudiantes__vacia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px var(--space-6);
+  background: var(--surface);
   border: 1px dashed var(--border-strong);
   border-radius: var(--radius-lg);
-  background: var(--surface);
+  box-shadow: none;
+}
+
+.lista-estudiantes__vacia-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.lista-estudiantes__vacia-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.lista-estudiantes__vacia-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--space-2);
+}
+
+.lista-estudiantes__vacia-desc {
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.lista-estudiantes__vacia-btn {
+  gap: var(--space-2);
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 640px) {
+  .lista-estudiantes__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lista-estudiantes__vacia {
+    padding: 36px var(--space-4);
+  }
 }
