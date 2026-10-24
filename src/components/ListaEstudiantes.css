@@ -1,0 +1,33 @@
+/* PLACEHOLDER DE INTEGRACIÓN — Integrante 3 reemplaza este archivo. */
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lista__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.lista__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.lista__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.lista__vacia {
+  padding: var(--space-6);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--text-secondary);
+}

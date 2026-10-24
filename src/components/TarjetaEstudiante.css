@@ -1,0 +1,23 @@
+/* PLACEHOLDER DE INTEGRACIÓN — Integrante 3 reemplaza este archivo. */
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.tarjeta__nombre {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tarjeta__carrera {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.tarjeta__acciones {
+  display: flex;
+  gap: var(--space-2);
+}

@@ -1,0 +1,17 @@
+TRABAJO – REACT Y COMPONENTES
+Actividad práctica
+
+Propuesta: desarrollar una pequeña interfaz de gestión académica con tres
+componentes:
+1. FormularioEstudiante: captura nombre y carrera.
+2. TarjetaEstudiante: muestra los datos de un estudiante mediante props.
+3. ListaEstudiantes: presenta los registros utilizando una lista de componentes.
+El formulario debe actualizar el estado de la aplicación y permitir que la lista muestre
+los nuevos registros sin recargar la página.
+Criterios de evaluación:
+Criterio Puntaje
+Definición y organización de componentes 3
+Uso correcto de props 3
+Manejo del estado y eventos 3
+Renderizado dinamico de listas 4
+Claridad y funcionamiento del código 4
