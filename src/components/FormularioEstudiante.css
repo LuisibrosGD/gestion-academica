@@ -1,12 +1,122 @@
-/* PLACEHOLDER DE INTEGRACIÓN — Integrante 2 reemplaza este archivo. */
-
+/* FormularioEstudiante — usa los tokens de src/styles/tokens.css */
 .form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 720px;
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.form__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 .form__title {
+  margin: 0;
   font-size: 16px;
   font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.form__subtitle {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* 2 columnas en desktop, 1 en móvil */
+.form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+/* ---------- Campos ---------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.field__required {
+  color: var(--accent);
+}
+
+.field__control {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field__control::placeholder {
+  color: var(--text-tertiary);
+}
+
+.field__control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.field__control--error,
+.field__control--error:focus {
+  border-color: var(--accent);
+}
+
+.field__control--error:focus {
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.field__error {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--accent);
+}
+
+/* ---------- Acciones ---------- */
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------- Móvil ---------- */
+
+@media (max-width: 640px) {
+  .form {
+    padding: var(--space-5);
+  }
+
+  .form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form__actions .btn {
+    width: 100%;
+  }
 }
